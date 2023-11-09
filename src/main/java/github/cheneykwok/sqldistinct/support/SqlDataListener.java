@@ -34,8 +34,9 @@ public class SqlDataListener implements ReadListener<SqlData> {
 
     private static final int BATCH_COUNT = 1000;
 
-    private final ThreadPoolExecutor executor = new ThreadPoolExecutor(8, 16, 5, TimeUnit.SECONDS,
-            new LinkedBlockingQueue<>(1000),
+    // 根据自己电脑配置
+    private final ThreadPoolExecutor executor = new ThreadPoolExecutor(16, 16, 5, TimeUnit.SECONDS,
+            new LinkedBlockingQueue<>(),
             Executors.defaultThreadFactory(),
             new ThreadPoolExecutor.CallerRunsPolicy());
 
